@@ -8,12 +8,16 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout>
 
-    <h1>{frontmatter.title}</h1>
-    <p>Date is: {frontmatter.date}</p>
-    <p>Location is: {frontmatter.location}</p>
+    <div class='bg-red-300 text-black'>
+        <h1>{frontmatter.title}</h1>
+        <p>Date is: {frontmatter.date}</p>
+        <p>Location: {frontmatter.location}</p>
+    </div>
     
-    <slot />
+    <slot class='text-black'>
+    
+    </slot>
 
-    <h2>See All Posts</h2>
+    
 
 </BaseLayout>

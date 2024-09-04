@@ -3,24 +3,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = "Blog";
 
-const allPostsLocations = await Astro.glob('../pages/posts/*.md');
-
+const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 
-	<div class="h-screen bg-yellow-900 text-black">
-		
-		<h1 class='p-2 text-center'>Welcome to the Blog</h1>
+	<div class=" bg-yellow-900 text-white">
 
-		<p class='p-2 text-center'>This is a simple blog site.</p>
+		<p class='p-2 text-center'>This coffee shop reviewing blog will focus on local coffee shops that I have visited and will be rated on a 5 point scale based off:</p>
 
-		<ul class='grid col-3 row-3'>
+		<ul class='text-center p-2'>
+			<li>Flavor</li>
+			<li>Quality</li>
+			<li>Aesthetic</li>
+			<li>Price</li>
+			<li>Overall Rating</li>
+		</ul>
+
+		<ul class='grid grid-cols-3 grid-rows-3 text-center'>
+
 			{
-				allPostsLocations.map((post) => 
-				<li class='text-white'><a href={post.url}><img src='' alt={post.title}></a></li>
-				)
+				allPosts.map((post) => (
+					<li class='p-2 m-2 outline outline-red-200 bg-purple-800/40 hover:bg-purple-900'>
+						<h1 class='m-2 lg:text-sm'>{post.frontmatter.title}</h1>
+						<a href={post.url} class='text-white'>
+							<img class='block mx-auto size-64' src={post.frontmatter.image} alt={post.frontmatter.title}>
+							<p class='m-2'>Posted: {post.frontmatter.date}</p>
+						</a>
+					</li>
+				))
 			}
+			
 		</ul>
 	
 	</div>
