@@ -8,25 +8,28 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 <BaseLayout pageTitle={pageTitle}>
 
-	<div class=" bg-yellow-900 text-white">
+	<div class=" bg-yellow-950/50 text-white">
 
-		<p class='p-2 text-center'>This coffee shop reviewing blog will focus on local coffee shops that I have visited and will be rated on a 5 point scale based off:</p>
+		<p class='p-2 text-center font-mono'>This coffee shop reviewing blog will focus on local coffee shops that I have visited and will be rated on a 5 point scale based off:</p>
 
-		<ul class='text-center p-2'>
-			<li>Flavor</li>
-			<li>Quality</li>
-			<li>Aesthetic</li>
-			<li>Price</li>
-			<li>Overall Rating</li>
-		</ul>
+		<div class='flex justify-center'>
+			<ul class='steps steps-horizontal text-center p-2 font-mono justify-center'>
+				<li class='step step-info sm:text-lg text-sm'>Flavor</li>
+				<li class='step step-primary sm:text-lg text-sm'>Quality</li>
+				<li class='step step-secondary sm:text-lg text-sm'>Aesthetic</li>
+				<li class='step step-accent sm:text-lg text-sm'>Price</li>
+				<li class='step step-error sm:text-lg text-sm'>Overall Rating</li>
+			</ul>
+		</div>
+		
 
-		<ul class='grid grid-cols-3 grid-rows-3 text-center'>
+		<ul class='grid md:grid-cols-3 md:grid-rows-3 text-center p-2 grid-cols-2 grid-rows-2'>
 
 			{
 				allPosts.map((post) => (
-					<li class='p-2 m-2 outline outline-red-200 bg-purple-800/40 hover:bg-purple-900'>
-						<h1 class='m-2 lg:text-sm'>{post.frontmatter.title}</h1>
+					<li class='p-2 m-2 border-4 rounded border-red-200 bg-purple-800/40 hover:bg-purple-900'>
 						<a href={post.url} class='text-white'>
+							<h1 class='m-2 sm:text-lg text-xs'>{post.frontmatter.title}</h1>
 							<img class='block mx-auto size-64' src={post.frontmatter.image} alt={post.frontmatter.title}>
 							<p class='m-2'>Posted: {post.frontmatter.date}</p>
 						</a>

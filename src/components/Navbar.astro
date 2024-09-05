@@ -2,11 +2,16 @@
 const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
-<div class='navbar gap-2 text-2xl bg-black'>
+<div class='navbar bg-black'>
 
+    <div class='navbar mx-auto'>
+        <h1 class='text-white sm:text-lg text-md text-center'>Local Coffee Shop Ratings</h1>
+    </div>
 
-    <a href='/'>Home</a>
-    <a href='/blog'>Blog</a>
-    <a href='/contact'>Contact</a>
+    <div class='navbar justify-end gap-2 text-white m-auto'>
+        <a class='btn btn-ghost border-white' href='/'>Home</a>
+        <a class='btn btn-ghost border-white' href='/blog'>Blog</a>
+        <a class='btn btn-ghost border-white' href='/contact'>Contact</a>
+    </div>
 
 </div>
