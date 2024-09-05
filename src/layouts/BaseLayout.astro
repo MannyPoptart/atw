@@ -1,12 +1,15 @@
 ---
 import Navbar from '../components/Navbar.astro' ;
+import Footer from '../components/Footer.astro' ;
 
 const siteName = "Coffee Ratings";
 
 const { pageTitle } = Astro.props;
+
+let theme = 'light';
 ---
 
-<html lang="en">
+<html lang="en" data-theme={theme}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -14,10 +17,10 @@ const { pageTitle } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{siteName} : {pageTitle}</title>
 	</head>
-	<body>
+	<body class='flex flex-col h-screen'>
 		
 		<!-- wrapper -->
-		<main>
+		<main class='flex-grow'>
 
 			<!-- Navigation component -->
 			<Navbar />
@@ -26,7 +29,10 @@ const { pageTitle } = Astro.props;
 			<!-- Astro Slot component -->
         	<slot />
 
+
 		</main>
+
+		<Footer />
 
 		
 

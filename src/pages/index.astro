@@ -5,11 +5,26 @@ const pageTitle = "Home";
 
 <BaseLayout pageTitle={pageTitle}>
 
-	<div class="h-screen bg-yellow-950 text-white">
+	<div class=''>
 		
 		<h1 class='p-2 text-center text-2xl'>Welcome to Local Coffee Shop Ratings</h1>
 
 		<p class='p-2 text-center'>This is a simple site to rate and review different types of coffee.</p>
+
+		<div
+		class="flex justify-center radial-progress bg-white mx-auto text-black"
+		style="--value:70; --size:7rem;"
+		role="progressbar">
+		<p class='p-4'>70%</p>
+		</div>
+
+		<div class="flex dropdown dropdown-top justify-center">
+			<div tabindex="0" role="button" class="btn m-1">Click</div>
+			<ul tabindex="0" class="dropdown-content menu border-black border-2 rounded-box z-[1] w-52 p-2 shadow">
+			  <li><a>Item 1</a></li>
+			  <li><a>Item 2</a></li>
+			</ul>
+		</div>
 
 
 	</div>
