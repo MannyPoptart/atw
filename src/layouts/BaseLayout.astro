@@ -6,10 +6,10 @@ const siteName = "Coffee Ratings";
 
 const { pageTitle } = Astro.props;
 
-let theme = 'light';
+let theme;
 ---
 
-<html lang="en" data-theme={coffee}>
+<html lang="en" data-theme={theme}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -37,11 +37,7 @@ let theme = 'light';
 		
 
 		<!-- Client Side Scripts -->
-		<script>
-
-			import "../scripts/myScripts.js";
-
-		</script>
+		<script src='../scripts/myScripts.js'></script>
 
 	</body>
 </html>
