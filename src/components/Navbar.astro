@@ -1,7 +1,7 @@
 ---
+import {changeTheme} from '../scripts/myScripts.js';
 const allPosts = await Astro.glob('../pages/posts/*.md');
 
-import changeTheme from '../layouts/BaseLayout.astro';
 ---
 
 <div class='navbar' data-theme='dark'>
@@ -11,11 +11,11 @@ import changeTheme from '../layouts/BaseLayout.astro';
     </div>
 
     <details class='dropdown'>
-        <summary class='btn m-1 text-center'>Themes</summary>
-        <ul class='dropdown-content menu rounded-box z-[1] w-24 bg-black p-2 text-center'>
-            <li>Light</li>
-            <li>Dark</li>
-            <li>Coffee</li>
+        <summary class='btn mx-1 text-center text-white border-white hover:border-white focus:border-white'>Themes</summary>
+        <ul class='dropdown-content menu gap-1 rounded-box z-[1] w-24 bg-black p-2 text-center'>
+            <button class='btn hover:bg-white hover:text-black' onclick="changeTheme('light')">Light</button>
+            <button class='btn' onclick="changeTheme('dark')">Dark</button>
+            <button class='btn hover:bg-yellow-900 hover:text-white' onclick="changeTheme('coffee')">Coffee</button>
         </ul>
     </details>
 
@@ -26,3 +26,5 @@ import changeTheme from '../layouts/BaseLayout.astro';
     </div>
 
 </div>
+
+<script src='../scripts/myScripts.js' client:load></script>
