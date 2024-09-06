@@ -4,13 +4,13 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 ---
 
-<div class='navbar shadow-md'>
+<div class='navbar shadow-md bg-yellow-900/20'>
 
     <div class='navbar mx-auto'>
         <h1 class=' sm:text-lg text-md text-center'>Local Coffee Shop Ratings</h1>
     </div>
 
-    <details class='dropdown m-auto translate-y-1'>
+    <details class='dropdown m-auto translate-y-1 z-[1]'>
         <summary class='btn mx-1 text-center border-gray-500 hover:border-white'>Themes</summary>
         <ul class='dropdown-content menu gap-1 rounded-box z-[1] w-24 p-2 text-center'>
             <button class='btn hover:bg-white hover:text-black' onclick="changeTheme('light')">Light</button>
