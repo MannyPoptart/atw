@@ -8,20 +8,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 
 <BaseLayout pageTitle={pageTitle}>
 
-	<div class="">
-
-		<p class='p-2 text-center font-mono'>This coffee shop reviewing blog will focus on local coffee shops that I have visited and will be rated on a 5 point scale based off:</p>
-
-		<div class='flex justify-center'>
-			<ul class='steps steps-horizontal text-center p-2 font-mono justify-center z-[0]'>
-				<li class='step step-info sm:text-lg text-sm'>Flavor</li>
-				<li class='step step-primary sm:text-lg text-sm'>Quality</li>
-				<li class='step step-secondary sm:text-lg text-sm'>Aesthetic</li>
-				<li class='step step-accent sm:text-lg text-sm'>Price</li>
-				<li class='step step-error sm:text-lg text-sm'>Overall Rating</li>
-			</ul>
-		</div>
-		
+	<div class="space-y-4 m-4">
 
 		<ul class='grid md:grid-cols-3 md:grid-rows-3 text-center p-2 grid-cols-2 grid-rows-2'>
 
